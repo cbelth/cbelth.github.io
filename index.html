@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="umich.png">
+<title>Caleb Belth</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<link rel="stylesheet" href="stylesheets/w3.css"> <!-- my own version of w3.css ^^^ -->
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"> -->
+<!-- last value below is the amount of bold -->
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,400italic,600'
+  rel='stylesheet' type='text/css'>
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("public/assets/images/zion_0.jpg");
+    min-height: 64%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">quickshift</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#publications" class="w3-bar-item w3-button">Publications</a>
+      <a href="public/assets/documents/caleb_belth_CV.pdf" target="_blank" class="w3-bar-item w3-button">CV</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      <a href="https://scholar.google.com/citations?user=pc-Y-yEAAAAJ&hl=en&oi=ao" target="_blank" class="w3-bar-item w3-button">Google Scholar</a>
+      <a href="https://www.semanticscholar.org/author/Caleb-Belth/1488659815" target="_blank" class="w3-bar-item w3-button">Semantic Scholar</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+  <a href="#publications" onclick="w3_close()" class="w3-bar-item w3-button">Publications</a>
+  <a href="public/assets/documents/caleb_belth_CV.pdf" target="_blank" class="w3-bar-item w3-button">CV</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
+  <a href="https://scholar.google.com/citations?user=pc-Y-yEAAAAJ&hl=en&oi=ao" target="_blank" class="w3-bar-item w3-button">Google Scholar</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container" id="home">
+</header>
+
+<!-- About Section -->
+<div class="w3-container" style="padding:40px 16px" id="about">
+
+  <!-- begin slideshow -->
+  <img class="mySlides" src="public/assets/images/smokies.jpg" align="right" height="330" width="330" style="padding:40px 16px" onclick="plusDivs(1)">
+  <img class="mySlides" src="public/assets/images/profile-alaska.jpg" align="right" height="330" width="330" style="padding:40px 16px" onclick="plusDivs(1)">
+  <img class="mySlides" src="public/assets/images/headshot.jpg" align="right" height="330" width="330" style="padding:40px 16px" onclick="plusDivs(1)">
+
+  <script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+  }
+  </script>
+  <!-- end slideshow -->
+
+  <!-- <img src="public/assets/images/profile-alaska.jpg" align="right" height="330" width="330" style="padding:40px 16px"> -->
+  <h3 class="w3-center">Caleb Belth</h3>
+  <h3 class="w3-center" style="color: gray;"><a href="http://ipa-reader.xyz/?text=ke%C9%AAl%C9%99b%20b%C9%9Bl%CE%B8" style="text-decoration: none" target="_blank">[keɪləb bɛlθ]</a></h3>
+      <p>
+        Welcome! I'm a PhD candidate at the University of Michigan, where
+        my advisor is <a href="http://web.eecs.umich.edu/~dkoutra/" target="_blank">Danai Koutra</a>.
+        <!-- Some of my interests are child language development, data mining, information theory, and philosophy. -->
+        <!-- Some of my interests are data mining, unsupervised learning theory, information theory, and philosophy. -->
+        <!-- I'm interested in Computation, Philosophy, and Complex Networks. -->
+        <br>
+        <br>
+        <!-- <a href="https://en.wikipedia.org/wiki/Markov_chain" target="_blank">non-Markovian processes</a>. -->
+        <!-- I am interested in studying systems like the media, community-based movements,
+        institutions, and power grids. Methodologically, I'm interested in understanding
+        the mechanisms underlying these systems, not just observations about them. -->
+        <!-- In order to
+        study these, I work on theorizing about the processes underlying them and
+        developing computational, graph-based methods for dealing with their complexity. -->
+        <!-- <br>
+        <br> -->
+        <!-- I'm intrigued by how we can reflexively and quickly infer
+        general principles through perception (e.g. morphology rules from a bunch of linguistic expressions), and how this relates
+        to computation. -->
+
+
+
+        <!-- I'm also intrigued by the computational aspect of natural language as a cognitive capacity. -->
+        <!-- In particular,  -->
+        <!-- I'm curious about how computation in general relates to this specific phenomenon. -->
+        <!-- <br> -->
+        <!-- <br> -->
+        <!-- In a related direction (ask me if you don't see how they are related),
+        I am working on summarizing graph-based knowledge bases such that the summary can
+        be used to say things about entities about which the knowledge base <i>appears</i> to have nothing to say. -->
+
+        <!-- My current projects are on information theoretic approaches to reflexively infer patterns from knowledge -->
+        <!-- graphs, -->
+        <!-- My research leverages ideas from information theory and linguistics -->
+        <!-- to contribute methods to concisely represent unbounded graphs, such as networks that evolve continually and indefinitely. -->
+        <!-- My research leverages ideas from information theory and linguistics
+        to contribute methods to represent and utilize graphs that are missing data: data mining with missing data.
+        Examples include evolving networks, which only contain the network's past evolution (the future is "missing"),
+        traffic networks with segments of trips over the network missing, and knowledge graphs that are missing facts about the world.
+        Applications of my work include anomaly detection and city/urban planning. -->
+        I am interested in how learnability, computational efficiency, and information theoretic laws
+        help children overcome sparse data to acquire language, and what that means for linguistic theory.
+        <!-- I primarily work in linguistics and computer science, but also think often about -->
+        <!-- philosophy, pyschology, evolutionary theory, and neuroscience. -->
+        <!-- I am interested in how clever tricks that children use in language acquisition can be used for learning with sparse data, and -->
+        <!-- how data mining and learning theory principles might be used by children in language acquisition. -->
+        <!-- I also often use information theory in my work. -->
+        <br>
+        <br>
+        <!-- My research focuses on developing graph mining methods that are able to operate on insufficient data by -->
+        <!-- My research focuses on developing graph mining methods that operate on limited data, -->
+        <!-- drawing on ideas from information theory and linguistics, such as entropy and insights from language learning. -->
+        <!-- Current directions include exploiting sparsity to learn in settings with only positive examples. -->
+        <!-- Current directions include learning in two-class settings, where only positive examples are available (no negative evidence). -->
+        My prior research has been in a different sparse data setting: graph mining. My research has contributed methods for choosing unlinked pairs of nodes to investigate further with a link prediction
+        method or experimental study, identifying subtle patterns in networks that are too infrequent to be discovered by frequency alone,
+        and for discovering errors and missing information in incomplete knowledge graphs.
+        <!-- My research focuses on developing scalable graph methods for operating under missing or incomplete data. -->
+        <!-- My research focuses on unsupervised methods for shrinking datasets under missing or incomplete data. -->
+        <!-- To do so, I draw on ideas from information theory and linguistics, such as entropy and insights from language learning. -->
+        <!-- My research has contributed methods for evolving networks, which, missing the future, only contain the network’s past evolution, and knowledge graphs, which are missing facts about the world. -->
+        Applications of my work include anomaly detection, suspicious behavior discovery, and city/urban planning, including current projects with the City of Detroit on transportation planning.
+
+        <br>
+        <br>
+        On the side, I investigate the possible effects of data mining objective functions on user well-being.
+        <!-- In each case, the concise network representation has made new network tasks and scenarios possible. -->
+        <!-- My current projects are on identifying inductive patterns—those that generalize beyond the data they were identified in.
+        These may be patterns that extend beyond the boundaries of an incomplete knowledge graph, or patterns that reoccur in
+        a graph edge stream, even in the presence of concept drift. The methods I work on draw on ideas from information theory and cognitive science. -->
+        <!-- <br> -->
+        <br>
+        <br>
+        I am grateful to have been selected for 2020-2023 NSF GRF and NDSEG fellowships. I am currently funded by the NSF GRF.
+        <br>
+        <!-- Pervious projects I have worked on involved representation learning to capture high-order (non-Markovian)
+        dependencies in network trajectories, identifying categories of influencers in social movements, and predicting
+        protein binding sites. -->
+
+        <!-- <br> -->
+        <!-- <br> -->
+        <!-- My interest in Complex Networks is driven largely by the mystery of emergence. -->
+         <!-- phenomena. -->
+        <!-- I also explore graph methods for higher (than first) order Markov chains on networks. -->
+
+        <!-- Currently, I am working on a project looking to automatically and without supervision find
+        rules (i.e. a model) in encyclopedic data which is significantly simplified into a graph structure
+        while jointly finding exceptions to those rules (or deviations from that model). This is conceptually
+        interesting because it is a much more tractable simplification of the general problem of building
+        a common-sense model of the world. It has practical applications in web search. -->
+        <!-- <br>
+        <br> -->
+        <!-- Underlying all my work, I try my best to think critically about its implications. -->
+        <!-- Right now, there are at least a couple fundamental questions that I especially wrestle with: -->
+        <br>
+        I try my best to be responsible with my research, and continually consider whether my work will be constructive or destructive to society.
+        <!-- I try my best to evaluate the implications of my work, and whether it will be constructive or destructive to society. -->
+        <br>
+        <!-- <br>
+        1) What might be the implications of methods I work on? Will they be constructive or destructive to society?
+        <br>
+        2) What is the motive of my research?
+        <br>
+        3) Does my research methodology match my motive?
+        <br> -->
+        <!-- <br>
+        A current musing: are flocks of birds Turing Complete?
+        <br> -->
+        <br>
+        Prior to Michigan, I received a B.Sc. in Computer Science from Purdue University, where I was fortunate
+        to work with
+        <a href="https://www.cs.purdue.edu/homes/neville/" target="_blank">Jennifer Neville</a>,
+        <a href="https://www.cs.purdue.edu/homes/dgoldwas/" target="_blank">Dan Goldwasser</a>, and
+        <a href="http://kiharalab.org/" target="_blank">Daisuke Kihara</a>.
+        <!-- I also enjoyed dabbling in Philosophy (special thanks to
+        <a href="https://web.ics.purdue.edu/~drkelly/" target="_blank">Dan Kelly</a>,
+        <a href="https://web.ics.purdue.edu/~smith132/" target="_blank">Dan Smith</a>, and <thead>
+        <a href="https://www.lib.purdue.edu/libraries/hsse" target="_blank">the HSSE library</a>
+        </thead> for
+        fostering that interest). -->
+        <!-- While I didn't enjoyed it as much, I also chose to dabble in Math. -->
+        <br>
+        <br>
+        Feel free to contact me at cbelth@umich.edu.
+        <br>
+        <!-- <br>
+        When people find out I am part of a data mining lab, they often express
+        concern about the
+        As a side note, I want to emphasize that not all data is personal data.
+        Even though I am in a data mining lab, you can sleep easy at night knowing that I'm not combing through your data.
+        <br>
+        <br> -->
+        <small>In case you are wondering, the name of this website ("quickshift") is a nod to my life-long love of road trips,
+        driving, and cars in general.</small>
+      </p>
+      <div class="w3-row-padding" style="margin-top:64px">
+</div>
+
+<!-- Essays Section -->
+<div class="w3-container w3-light-grey" style="padding:16px 16px" id="publications">
+  <!-- <p class="w3-center w3-large">Publications</p> -->
+  <p class="w3-large">Publications</p>
+  <ul>
+  <li>
+    <i>The Greedy and Recursive Search for Morphological Productivity</i><br>
+    <b>Caleb Belth</b>, Sarah Payne, Deniz Beser, Jordan Kodner, Charles Yang<br>
+    CogSci, 2021<br>
+  </li>
+  <li>
+    <i>A Hidden Challenge of Link Prediction: Which Pairs to Check?</i><br>
+    <b>Caleb Belth</b>, Alican Büyükçakır, Danai Koutra<br>
+    IEEE International Conference on Data Mining (ICDM), 2020 (acceptance rate: 9.8%)
+    <br>
+    Selected as one of the best papers at ICDM 2020. Invited for potential publication at the KAIS Journal, Springer.
+    <br>
+    [<a href="public/assets/documents/belth-2020-ICDM-LinkWaldo.pdf", target="_blank">pdf</a>]
+    [<a href="https://github.com/GemsLab/LinkWaldo", target="_blank">code</a>]
+    <br>
+  </li>
+  <li>
+    <i>Mining Persistent Activity in Continually Evolving Networks.</i><br>
+    <b>Caleb Belth</b>, Xinyi (Carol) Zheng, Danai Koutra<br>
+    ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), August 2020 (acceptance rate 17%)
+    <br>
+    [<a href="public/assets/documents/belth-2020-KDD-PENminer.pdf", target="_blank">pdf</a>]
+    [<a href="https://github.com/GemsLab/PENminer", target="_blank">code</a>]
+    <br>
+    <iframe width="420" height="236.25" src="https://www.youtube.com/embed/00mIinJWRWI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br>
+    Also accepted for presentation at the 16th SIGKDD International Workshop on Mining and Learning with Graphs.
+  </li>
+  <li>
+  <i>What is Normal, What is Strange, and What is Missing in a Knowledge Graph: Unified Characterization via Inductive Summarization.</i><br>
+  <b>Caleb Belth</b>, Xinyi (Carol) Zheng, Jilles Vreeken, Danai Koutra<br>
+  ACM The Web Conference (WWW), April 2020 (oral presentation, acceptance rate 19%)
+  <br>
+  [<a href="public/assets/documents/belth-2020-WebConf-KGist.pdf", target="_blank">pdf</a>]
+  [<a href="https://github.com/GemsLab/KGist", target="_blank">code</a>]
+  [<a href="https://youtu.be/Ql7VEfliPXo", target="_blank">video</a>]
+  <br>
+  <iframe width="420" height="236.25" src="https://www.youtube.com/embed/Ql7VEfliPXo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </li>
+  <li>
+  <i>Personalized Knowledge Graph Summarization: From the Cloud to Your Pocket </i><br>
+  Tara Safavi, <b>Caleb Belth</b>, Lukas Faber, Davide Mottin, Emmanuel Muller, Danai Koutra<br>
+  IEEE International Conference on Data Mining (ICDM), 2019 (acceptance rate: 9%)
+  <br>
+  [<a href="public/assets/documents/safavi-2019-glimpse.pdf", target="_blank">pdf</a>]
+  </li>
+  <li>
+  <i>When to Remember Where You Came from: Node Representation Learning in Higher-order Networks</i><br>
+  <b>Caleb Belth</b>, Fahad Kamran, Donna Tjandra, Danai Koutra<br>
+  IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM), 2019 (acceptance rate: 15%)
+  <br>
+  [<a href="public/assets/documents/When-to-Remember-Where-You-Came-From.pdf", target="_blank">pdf</a>]
+  [<a href="https://docs.google.com/presentation/d/1ZfrT_FaD6PsuDvI9xai8rXY7tsVer5ll6mzn0esrm28/edit?usp=sharing", target="_blank">slides</a>]<br>
+  Also accepted for presentation at the 15th SIGKDD International Workshop on Mining and Learning with Graphs.
+  </li>
+  </ul>
+</div>
+  <!-- <p class="w3-rwo w3-large">Essays</p> -->
+<div class="w3-container w3-white" style="padding:16px 16px" id="publications">
+  <p class="w3-large">Creative Content</p>
+  <div class="w3-row-padding w3-white row">
+    <img src="public/assets/images/chipmunk.jpg" align="center" height="400" width="400" style="padding:0px 0px; margin-left:200px;">
+    <!-- <div class="w3-col l2 m6 w3-margin-bottom column"> -->
+      <!-- <p class="w3-large">Essays</p>
+      <div class="w3-card">
+        <div class="w3-container">
+          <p class="w3-opacity">So Close. <a href="public/assets/documents/So_Close.pdf" target="_blank">[pdf]</a></p>
+        </div>
+      </div>
+      <br>
+      <div class="w3-card">
+        <div class="w3-container">
+          <p class="w3-opacity">Minds, Brains, and Maybe Programs. And also elephants. <a href="public/assets/documents/MindsBrainsAndMaybePrograms.pdf" target="_blank">[pdf]</a></p>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="w3-col l2 m6 w3-margin-bottom column">
+      <p class="w3-large">Cartoons</p>
+      <p class="w3-large"></p>
+      <div class="w3-card">
+        <div class="w3-container">
+          <p class="w3-opacity">A rock comedian. <a href="public/assets/documents/rock.jpg" target="_blank">[image]</a> <b>Categories:</b> Philosophy, Consciousness</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-col l2 m6 w3-margin-bottom column">
+      <p class="w3-large">Drawings</p>
+      <p class="w3-large"></p>
+      <div class="w3-card">
+        <div class="w3-container">
+          <p class="w3-opacity">Cliff edge. <a href="public/assets/documents/cliff-edge.jpg" target="_blank">[image]</a></p>
+        </div>
+      </div>
+    </div>
+  <br>
+  <br>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-dark-grey w3-padding-32" id="contact">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Jump to the top</a>
+  <div class="w3-center" style="margin-top:10px">
+    <div class="w3-center">
+      <p>Ann Arbor, MI</p>
+      <p>cbelth@umich.edu</p>
+      <p><a href="https://gemslab.github.io/" target="_blank">GemsLab</a></p>
+    </div>
+  </div>
+  <div class="w3-xlarge w3-section">
+    <a href="https://twitter.com/cbelth" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/cbelth/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/calebbelth/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  </div>
+</footer>
+
+<script>
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+    } else {
+        mySidebar.style.display = 'block';
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+</body>
+</html>
