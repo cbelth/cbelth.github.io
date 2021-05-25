@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: cbelth.github.io
+Token: 8771dbdfe12ed59b8480ab1dcca77493b637edc2126b823c9e1dc95c94494a08
