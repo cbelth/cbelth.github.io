@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="umich.png">
+<title>Caleb Belth</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<link rel="stylesheet" href="stylesheets/w3.css"> <!-- my own version of w3.css ^^^ -->
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"> -->
+<!-- last value below is the amount of bold -->
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,400italic,600'
+  rel='stylesheet' type='text/css'>
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("public/assets/images/zion_0.jpg");
+    min-height: 50%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <!-- <a href="#home" class="w3-bar-item w3-button w3-wide">quickshift</a> -->
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button">Home</a>
+      <a href="research.html" class="w3-bar-item w3-button">Research</a>
+      <a href="public/assets/documents/caleb_belth_CV.pdf" target="_blank" class="w3-bar-item w3-button">CV</a>
+      <a href="https://scholar.google.com/citations?user=pc-Y-yEAAAAJ&hl=en&oi=ao" target="_blank" class="w3-bar-item w3-button">Google Scholar</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
+  <a href="research.html" onclick="w3_close()" class="w3-bar-item w3-button">Research</a>
+  <a href="public/assets/documents/caleb_belth_CV.pdf" target="_blank" class="w3-bar-item w3-button">CV</a>
+  <a href="https://scholar.google.com/citations?user=pc-Y-yEAAAAJ&hl=en&oi=ao" target="_blank" class="w3-bar-item w3-button">Google Scholar</a>
+</nav>
+
+<!-- Header with full-height image -->
+<!-- <header class="bgimg-1 w3-display-container" id="home">
+</header>
+ -->
+<div class="w3-container w3-light-grey" style="padding:16px 16px" id="publications">
+  <!-- <p class="w3-center w3-large">Publications</p> -->
+  <br>
+  <br>
+  <br>
+  My research attempts to develop algorithmic, learning-based acounts of phonological rules and representations, usually from the perspective of language acquisition, using computational and experimental approaches. This involves identifying independently-established psychological mechanisms that could be at play in the process of linguistic development, and using these mechanisms as the components of computational learning algorithms. Such algorithms constitute hypotheses about the processes involved in human learning. Through evaluation of a hypothesized learning algorithm—in particular its accuracy generalizing to unseen test words, its predicted developmental patterns, and its predictions in experimental settings—the algorithm can be interpreted as providing a learning-based account of the rules and representations that it constructs along the way.
+  <br>
+  <p class="w3-large">Publications</p>
+  <ul>
+  <li>
+    <i>A Learning-Based Account of Phonological Tiers</i><br>
+    <b>Caleb Belth</b><br>
+    <i>Linguistic Inquiry</i>, In Press.
+    <br>
+    [<a href="public/assets/documents/belth-LI-2024.pdf", target="_blank">pdf</a>]
+    <!-- [<a href="https://github.com/", target="_blank">code</a>] -->
+  </li>
+  <li>
+    <i>A Learning-Based Account of Local Phonological Processes</i><br>
+    <b>Caleb Belth</b><br>
+    <i>Phonology</i>, In Press.
+    <br>
+    [<a href="public/assets/documents/Belth_Local_Phonology.pdf", target="_blank">pdf</a>]
+    <!-- [<a href="https://github.com/", target="_blank">code</a>] -->
+  </li>
+  <li>
+    <i>A Learning-Based Account of Non-Productivity in Dutch Voicing Alternations</i><br>
+    <b>Caleb Belth</b><br>
+    Boston University Conference on Language Development, 2023
+    <br>
+    [<a href="public/assets/documents/BUCLD_2024_Dutch.pdf", target="_blank">pdf</a>]
+  </li>
+  <li>
+    <i>Towards a Learning-Based Account of Underlying Forms: A Case Study in Turkish</i><br>
+    <b>Caleb Belth</b><br>
+    Society for Computation in Linguistics, 2023
+    <br>
+    [<a href="public/assets/documents/belth-2023-SCiL-URs.pdf", target="_blank">pdf</a>]
+    [<a href="https://github.com/cbelth/underlying-forms-SCiL", target="_blank">code</a>]
+  </li>
+  <li>
+    <i>The Greedy and Recursive Search for Morphological Productivity</i><br>
+    <b>Caleb Belth</b>, Sarah Payne, Deniz Beser, Jordan Kodner, Charles Yang<br>
+    CogSci, 2021<br>
+    [<a href="public/assets/documents/belth-2021-CogSci-ATP.pdf", target="_blank">pdf</a>]
+    [<a href="https://github.com/cbelth/ATP-morphology", target="_blank">code</a>]
+  </li>
+  <li>
+    <i>A Hidden Challenge of Link Prediction: Which Pairs to Check?</i><br>
+    <b>Caleb Belth</b>, Alican Büyükçakır, Danai Koutra<br>
+    IEEE International Conference on Data Mining (ICDM), 2020 (acceptance rate: 9.8%)
+    <br>
+    Selected as one of the best papers at ICDM 2020. Invited for publication at the KAIS Journal, Springer.
+    <br>
+    [<a href="public/assets/documents/belth-2020-ICDM-LinkWaldo.pdf", target="_blank">conference pdf</a>]
+    [<a href="public/assets/documents/belth-2022-KAIS-LinkWaldo.pdf", target="_blank">journal extension pdf</a>]
+    [<a href="https://github.com/GemsLab/LinkWaldo", target="_blank">code</a>]
+    <br>
+  </li>
+  <li>
+    <i>Mining Persistent Activity in Continually Evolving Networks.</i><br>
+    <b>Caleb Belth</b>, Xinyi (Carol) Zheng, Danai Koutra<br>
+    ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), August 2020 (acceptance rate 17%)
+    <br>
+    [<a href="public/assets/documents/belth-2020-KDD-PENminer.pdf", target="_blank">pdf</a>]
+    [<a href="https://github.com/GemsLab/PENminer", target="_blank">code</a>]
+    [<a href="https://www.youtube.com/watch?v=00mIinJWRWI", target="_blank">video</a>]
+    <br>
+    Also accepted for presentation at the 16th SIGKDD International Workshop on Mining and Learning with Graphs.
+  </li>
+  <li>
+  <i>What is Normal, What is Strange, and What is Missing in a Knowledge Graph: Unified Characterization via Inductive Summarization.</i><br>
+  <b>Caleb Belth</b>, Xinyi (Carol) Zheng, Jilles Vreeken, Danai Koutra<br>
+  ACM The Web Conference (WWW), April 2020 (oral presentation, acceptance rate 19%)
+  <br>
+  [<a href="public/assets/documents/belth-2020-WebConf-KGist.pdf", target="_blank">pdf</a>]
+  [<a href="https://github.com/GemsLab/KGist", target="_blank">code</a>]
+  [<a href="https://youtu.be/Ql7VEfliPXo", target="_blank">video</a>]
+  <br>
+  </li>
+  <li>
+  <i>Personalized Knowledge Graph Summarization: From the Cloud to Your Pocket </i><br>
+  Tara Safavi, <b>Caleb Belth</b>, Lukas Faber, Davide Mottin, Emmanuel Muller, Danai Koutra<br>
+  IEEE International Conference on Data Mining (ICDM), 2019 (acceptance rate: 9%)
+  <br>
+  [<a href="public/assets/documents/safavi-2019-glimpse.pdf", target="_blank">pdf</a>]
+  </li>
+  <li>
+  <i>When to Remember Where You Came from: Node Representation Learning in Higher-order Networks</i><br>
+  <b>Caleb Belth</b>, Fahad Kamran, Donna Tjandra, Danai Koutra<br>
+  IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM), 2019 (acceptance rate: 15%)
+  <br>
+  [<a href="public/assets/documents/When-to-Remember-Where-You-Came-From.pdf", target="_blank">pdf</a>]
+  [<a href="https://docs.google.com/presentation/d/1ZfrT_FaD6PsuDvI9xai8rXY7tsVer5ll6mzn0esrm28/edit?usp=sharing", target="_blank">slides</a>]<br>
+  Also accepted for presentation at the 15th SIGKDD International Workshop on Mining and Learning with Graphs.
+  </li>
+  </ul>
+</div>
+
+</body>
+</html>
