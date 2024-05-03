@@ -34,6 +34,7 @@ body, html {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <!-- <a href="#home" class="w3-bar-item w3-button w3-wide">quickshift</a> -->
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="index.html" class="w3-bar-item w3-button">Home</a>
@@ -42,6 +43,7 @@ body, html {
       <a href="https://scholar.google.com/citations?user=pc-Y-yEAAAAJ&hl=en&oi=ao" target="_blank" class="w3-bar-item w3-button">Google Scholar</a>
       <a href="resources.html" class="w3-bar-item w3-button">Resources</a>
     </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
       <i class="fa fa-bars"></i>
@@ -60,44 +62,24 @@ body, html {
 </nav>
 
 <!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container" id="home">
+<!-- <header class="bgimg-1 w3-display-container" id="home">
 </header>
-
-<div class="w3-container" style="padding:5px 16px" id="home">
-
-  <img class="mySlides" src="public/assets/images/sloth.jpg" align="right" height="380" width="290" style="padding:10px 10px" onclick="plusDivs(1)">
-
-  <h3 class="w3-left"><b>Caleb Belth</b></h3>
+ -->
+<div class="w3-container w3-light-grey" style="padding:16px 16px" id="publications">
+  <!-- <p class="w3-center w3-large">Publications</p> -->
   <br>
   <br>
-  <h6 ><b>caleb.belth@utah.edu</b></h6>
-  <!-- <br> -->
-  <!-- <br><br> -->
-      <p>
-        Welcome! I am an Assistant Professor in the Linguistics Department at the <b><font color="#CC0000">University of Utah</font></b>. I recently defended my PhD <a href="public/assets/documents/belth_dissertation.pdf", target="_blank">dissertation</a> at the <b><font color="#00274C">University of Michigan</font></b>. My research falls primarily in <b>language acquisition</b>, <b>computational linguistics</b>, and <b>theoretical phonology</b>, though my interests are much broader. My main research goal is to make concrete theoretical proposals about language acquisition, in particular the acquisition of phonology and morphology, and to work out their implications for linguistic theory. I use computational, experimental, and corpus-based approaches. You can read more about my research <a href="research.html" onclick="w3_close()">here</a>. I am also interested the history and philosophy of science, especially linguistics and biology.
-        <br>
-        <br>
-        For my research, I have been awarded an NSF GRF, an NDSEG fellowship, and a Richard F. and Eleanor A. Towner Prize for Distinguished Academic Achievement.
-      </p>
-      <div class="w3-row-padding" style="margin-top:64px">
+  <br>
+  <br>
+  <p class="w3-large">Linguistics Resources</p>
+  <ul>
+  <li>
+    <b>algophon</b>: Code for working on computational phonology and morphology in Python.<br>
+    [<a href="https://github.com/cbelth/algophon", target="_blank">github</a>] [<a href="https://pypi.org/project/algophon/", target="_blank">pypi</a>]
+    <!-- [<a href="https://github.com/", target="_blank">code</a>] -->
+  </li>
+  </ul>
 </div>
-
-<!-- <div class="w3-container w3-white" style="padding:16px 16px" id="creative">
-  <p class="w3-large">Creative Content</p>
-  <div class="w3-row-padding w3-white row">
-    <img src="public/assets/images/chipmunk.jpg" align="center" height="400" width="400" style="padding:0px 0px; margin-left:200px;">
-    <div class="w3-col l2 m6 w3-margin-bottom column">
-      <p class="w3-large">Cartoons</p>
-      <p class="w3-large"></p>
-      <div class="w3-card">
-        <div class="w3-container">
-          <p class="w3-opacity">A rock comedian. <a href="public/assets/documents/rock.jpg" target="_blank">[image]</a> <b><br>Categories:</b> Philosophy, Consciousness</p>
-        </div>
-      </div>
-    </div>
-  <br>
-  <br>
-</div> -->
 
 </body>
 </html>
