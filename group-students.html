@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" href="umich.png">
+<title>Student Groups &middot; Caleb Belth</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheets/w3.css"> <!-- my own version of w3.css ^^^ -->
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,400italic,600,700'
+  rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="stylesheets/site.css"> <!-- polish layer, must load last -->
+<style>
+/* ---------- Form ---------- */
+
+.group-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem 1.5rem;
+  margin: 1.75rem 0 0;
+}
+
+.field { flex: 0 1 15rem; }
+
+.field label {
+  display: block;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: var(--ink);
+  margin-bottom: .3rem;
+}
+
+.field input {
+  width: 100%;
+  font: inherit;
+  font-size: .95rem;
+  color: var(--ink);
+  padding: .45rem .65rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(164, 22, 26, .12);
+}
+
+.group-form button {
+  font: inherit;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 8px;
+  padding: .5rem 1.1rem;
+  cursor: pointer;
+  transition: opacity .15s ease;
+}
+
+.group-form button:hover { opacity: .88; }
+
+.form-error {
+  flex: 1 0 100%;
+  margin: 0;
+  font-size: .88rem;
+  color: var(--accent);
+}
+
+/* ---------- Results ---------- */
+
+.results-head {
+  margin: 2.5rem 0 .25rem;
+  padding-bottom: .55rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 1.32rem;
+}
+
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.group-card {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: .85rem 1rem 1rem;
+}
+
+.group-card h3 {
+  margin: 0 0 .5rem;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.group-card h3 .count {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.roster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roster li {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--body);
+  background: #f4f5f7;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: .1rem .6rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .field { flex: 1 1 100%; }
+  .group-form button { width: 100%; }
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a href="index.html" class="site-name">Caleb Belth</a>
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+    <a href="research.html" class="w3-bar-item w3-button">Research</a>
+    <a href="public/assets/documents/caleb_belth_CV.pdf" target="_blank" class="w3-bar-item w3-button">CV</a>
+    <a href="https://scholar.google.com/citations?user=pc-Y-yEAAAAJ&hl=en&oi=ao" target="_blank" class="w3-bar-item w3-button">Scholar</a>
+    <a href="resources.html" class="w3-bar-item w3-button">Resources</a>
+  </div>
+</div>
+
+<main class="wrap" id="groups">
+  <h1>Random Student Groups</h1>
+  <p class="lede">
+    Enter how many students are present and how large you want the groups to be.
+    Students are numbered 1 through <i>n</i> and shuffled randomly.
+  </p>
+
+  <form class="group-form" id="group-form">
+    <div class="field">
+      <label for="num-students">Students present</label>
+      <input type="number" id="num-students" min="1" step="1" inputmode="numeric" placeholder="24">
+    </div>
+    <div class="field">
+      <label for="group-size">Students per group</label>
+      <input type="number" id="group-size" min="1" step="1" inputmode="numeric" placeholder="4">
+    </div>
+    <button type="submit">Generate Groups</button>
+    <p class="form-error" id="error" role="alert" hidden></p>
+  </form>
+
+  <div id="results"></div>
+</main>
+
+<footer class="site-footer">
+  Caleb Belth &middot; Department of Linguistics, University of Utah &middot;
+  <a href="mailto:caleb.belth@utah.edu">caleb.belth@utah.edu</a>
+</footer>
+
+<script>
+// Fisher-Yates shuffle (the JS equivalent of random.shuffle)
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function makeGroups(numStudents, groupSize) {
+  const numGroups = Math.floor(numStudents / groupSize); // how many times does groupSize go into numStudents (ignore remainder for now)
+
+  const studentIds = []; // generate a list of student ids
+  for (let i = 1; i <= numStudents; i++) {
+    studentIds.push(i);
+  }
+  shuffle(studentIds); // randomize the order of the ids
+
+  const groups = []; // create a list of groups
+  for (let groupNum = 0; groupNum < numGroups; groupNum++) {
+    const group = [];
+    for (let i = 0; i < groupSize; i++) {
+      group.push(studentIds.shift());
+    }
+    groups.push(group); // add group to the list of groups
+  }
+
+  // add any remaining students to the groups
+  if (studentIds.length > 0) {
+    // if there are fewer students than the group size, everyone left forms one group;
+    // likewise if the remainder can form a group of size near the target size
+    if (groups.length === 0 || (studentIds.length === groupSize - 1 && groupSize - 1 > 1)) {
+      groups.push(studentIds.slice());
+    } else { // otherwise, distribute the remainder across the existing groups
+      studentIds.forEach(function(student, idx) {
+        groups[idx % groups.length].push(student);
+      });
+    }
+  }
+
+  return groups;
+}
+
+function render(groups) {
+  const results = document.getElementById("results");
+  results.textContent = "";
+
+  const heading = document.createElement("h2");
+  heading.className = "results-head";
+  heading.textContent = groups.length + (groups.length === 1 ? " group" : " groups");
+  results.appendChild(heading);
+
+  const grid = document.createElement("ul");
+  grid.className = "group-grid";
+
+  groups.forEach(function(group, idx) {
+    const card = document.createElement("li");
+    card.className = "group-card";
+
+    const title = document.createElement("h3");
+    title.textContent = "Group " + (idx + 1) + " ";
+    const count = document.createElement("span");
+    count.className = "count";
+    count.textContent = "(" + group.length + ")";
+    title.appendChild(count);
+    card.appendChild(title);
+
+    const roster = document.createElement("ul");
+    roster.className = "roster";
+    group.forEach(function(student) {
+      const chip = document.createElement("li");
+      chip.textContent = student;
+      roster.appendChild(chip);
+    });
+    card.appendChild(roster);
+
+    grid.appendChild(card);
+  });
+
+  results.appendChild(grid);
+}
+
+function showError(message) {
+  const error = document.getElementById("error");
+  error.textContent = message;
+  error.hidden = !message;
+  if (message) {
+    document.getElementById("results").textContent = "";
+  }
+}
+
+document.getElementById("group-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const numStudents = parseInt(document.getElementById("num-students").value, 10);
+  const groupSize = parseInt(document.getElementById("group-size").value, 10);
+
+  if (!Number.isInteger(numStudents) || numStudents < 1) {
+    showError("Please enter a positive number of students.");
+    return;
+  }
+  if (!Number.isInteger(groupSize) || groupSize < 1) {
+    showError("Please enter a positive group size.");
+    return;
+  }
+
+  showError("");
+  render(makeGroups(numStudents, groupSize));
+});
+</script>
+
+</body>
+</html>
