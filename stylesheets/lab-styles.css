@@ -1075,16 +1075,40 @@ footer {
 	margin-top: -3rem
 }
 
-.column {
-	float: left;
-	width: 33%;
-	padding: 5px
+/* Member photos. Flex rather than 33% floats: at phone width a 33% column is
+   ~113px while the images render ~180px wide, so they overflowed and collided. */
+/* Grid with auto-fill (not auto-fit, and not flex): empty tracks are kept, so a
+   row holding a single figure still sizes it to match the rows above it. */
+.row {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: 1.5rem 1.25rem;
+	margin-bottom: .5rem
 }
 
-.row::after {
-	content: "";
-	clear: both;
-	display: table
+.column {
+	float: none;
+	width: auto;
+	padding: 0;
+	max-width: 200px
+}
+
+.column figure {
+	margin: 0
+}
+
+.column img {
+	display: block;
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	margin: 0
+}
+
+.column figcaption {
+	margin-top: .45rem;
+	font-size: .9rem;
+	line-height: 1.4
 }
 
 .mini-intro {
@@ -1233,4 +1257,31 @@ footer {
 	vertical-align: middle;
 	margin-left: .25rem;
 	padding: .25rem
+}
+/* ---------- Small screens ---------- */
+
+@media (max-width: 640px) {
+	/* 5rem of dead space above the logo on a phone. */
+	.container {
+		margin-top: 2rem;
+		padding-left: 1.25rem;
+		padding-right: 1.25rem
+	}
+
+	/* The 75% cap left the first paragraph wrapping ~90px narrower than the
+	   copy below it, which is not inside a <p> and so ran full width. */
+	.mini-intro h1,
+	.mini-intro p {
+		max-width: 100%;
+		padding-right: 0
+	}
+
+	.mini-intro .avatar {
+		max-width: 210px;
+		width: 62%
+	}
+
+	.column img {
+		height: 170px
+	}
 }
