@@ -1,88 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <link rel="icon" href="umich.png">
-<title>Caleb Belth</title>
+<title>Resources &middot; Caleb Belth</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 <link rel="stylesheet" href="stylesheets/w3.css"> <!-- my own version of w3.css ^^^ -->
-<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"> -->
-<!-- last value below is the amount of bold -->
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,400italic,600'
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,400italic,600,700'
   rel='stylesheet' type='text/css'>
-
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-body, html {
-    height: 100%;
-    line-height: 1.8;
-}
-/* Full height image header */
-.bgimg-1 {
-    background-position: center;
-    background-size: cover;
-    background-image: url("public/assets/images/zion_0.jpg");
-    min-height: 50%;
-}
-.w3-bar .w3-button {
-    padding: 16px;
-}
-</style>
+<link rel="stylesheet" href="stylesheets/site.css"> <!-- polish layer, must load last -->
 <body>
 
-<!-- Navbar (sit on top) -->
+<!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <!-- <a href="#home" class="w3-bar-item w3-button w3-wide">quickshift</a> -->
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-      <a href="index.html" class="w3-bar-item w3-button">Home</a>
-      <a href="research.html" class="w3-bar-item w3-button">Research</a>
-      <a href="public/assets/documents/caleb_belth_CV.pdf" target="_blank" class="w3-bar-item w3-button">CV</a>
-      <a href="https://scholar.google.com/citations?user=pc-Y-yEAAAAJ&hl=en&oi=ao" target="_blank" class="w3-bar-item w3-button">Google Scholar</a>
-      <a href="resources.html" class="w3-bar-item w3-button">Resources</a>
-    </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
+  <div class="w3-bar" id="myNavbar">
+    <a href="index.html" class="site-name">Caleb Belth</a>
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+    <a href="research.html" class="w3-bar-item w3-button">Research</a>
+    <a href="public/assets/documents/caleb_belth_CV.pdf" target="_blank" class="w3-bar-item w3-button">CV</a>
+    <a href="https://scholar.google.com/citations?user=pc-Y-yEAAAAJ&hl=en&oi=ao" target="_blank" class="w3-bar-item w3-button">Scholar</a>
+    <a href="resources.html" class="w3-bar-item w3-button" aria-current="page">Resources</a>
   </div>
 </div>
 
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
-  <a href="research.html" onclick="w3_close()" class="w3-bar-item w3-button">Research</a>
-  <a href="public/assets/documents/caleb_belth_CV.pdf" target="_blank" class="w3-bar-item w3-button">CV</a>
-  <a href="https://scholar.google.com/citations?user=pc-Y-yEAAAAJ&hl=en&oi=ao" target="_blank" class="w3-bar-item w3-button">Google Scholar</a>
-  <a href="resources.html" onclick="w3_close()" class="w3-bar-item w3-button">Resources</a>
-</nav>
-
-<!-- Header with full-height image -->
-<!-- <header class="bgimg-1 w3-display-container" id="home">
-</header>
- -->
-<div class="w3-container w3-light-grey" style="padding:16px 16px" id="publications">
-  <!-- <p class="w3-center w3-large">Publications</p> -->
-  <br>
-  <br>
-  <br>
-  <br>
-  <p class="w3-large">Linguistics Resources</p>
-  <ul>
+<main class="wrap" id="resources">
+  <h1>Linguistics Resources</h1>
+  <ul class="link-list">
   <li>
     <b>algophon</b>: Code for working on computational phonology and morphology in Python.<br>
-    [<a href="https://github.com/cbelth/algophon", target="_blank">github</a>] [<a href="https://pypi.org/project/algophon/", target="_blank">pypi</a>]    
+    [<a href="https://github.com/cbelth/algophon" target="_blank">github</a>] [<a href="https://pypi.org/project/algophon/" target="_blank">pypi</a>]
   </li>
   <li>
     Python script for making random groups of students in a course.<br>
-    [<a href="public/assets/documents//group-students.py", target="_blank">link</a>]   
+    [<a href="public/assets/documents/group-students.py" target="_blank">link</a>]
   </li>
   </ul>
-</div>
+</main>
+
+<footer class="site-footer">
+  Caleb Belth &middot; Department of Linguistics, University of Utah &middot;
+  <a href="mailto:caleb.belth@utah.edu">caleb.belth@utah.edu</a>
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,300 @@
+/* Shared polish layer. Loaded after w3.css, so it wins on equal specificity. */
+
+:root {
+  --ink: #16191d;
+  --body: #3c444d;
+  --muted: #737b85;
+  --rule: #e5e8ec;
+  --accent: #a4161a;
+  --bg: #fff;
+  --measure: 50rem;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body, html {
+  height: auto;
+  min-height: 100%;
+}
+
+body {
+  /* Column layout so the footer sits at the bottom on short pages. */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--body);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+  transition: color .15s ease;
+}
+
+a:hover { text-decoration: underline; }
+
+/* ---------- Navbar ---------- */
+
+/* Sticky rather than fixed: the bar reserves its own space, so pages need no
+   manual top offset to clear it. */
+.w3-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, .88);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Same box as .wrap, so nav items line up with the text column. */
+#myNavbar.w3-bar {
+  background: transparent;
+  box-shadow: none;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: .7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 .15rem;
+}
+
+#myNavbar .site-name {
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-right: auto;
+  padding: 0;
+}
+
+#myNavbar .site-name:hover { text-decoration: none; color: var(--accent); }
+
+/* w3.css styles .w3-button hover with !important, so these have to match it. */
+#myNavbar .w3-bar-item.w3-button {
+  padding: .4rem .7rem;
+  margin: 0;
+  width: auto;
+  font-size: .82rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .02em;
+  border-radius: 8px;
+  color: var(--muted) !important;
+  background-color: transparent !important;
+  transition: color .15s ease, background-color .15s ease;
+}
+
+#myNavbar .w3-bar-item.w3-button:hover {
+  color: var(--ink) !important;
+  background-color: #f1f2f4 !important;
+  text-decoration: none;
+}
+
+#myNavbar .w3-bar-item.w3-button[aria-current="page"] {
+  color: var(--accent) !important;
+  background-color: rgba(164, 22, 26, .08) !important;
+}
+
+/* ---------- Page shell ---------- */
+
+.wrap {
+  /* width:100% is required: auto cross-axis margins on a flex item cancel
+     `stretch`, so without it the column shrink-to-fits its content. */
+  width: 100%;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3.25rem 1.5rem 0;
+}
+
+.wrap.has-hero { padding-top: 2.25rem; }
+
+/* ---------- Hero band ---------- */
+
+.bgimg-1 {
+  min-height: 0;
+  height: 34vh;
+  max-height: 320px;
+  background-position: center 60%;
+  background-size: cover;
+}
+
+/* ---------- Intro block ---------- */
+
+.intro {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.intro-text { flex: 1 1 20rem; min-width: 0; }
+
+.intro h1 {
+  font-size: 2.35rem;
+  margin: 0 0 .35rem;
+}
+
+.intro .role {
+  margin: 0 0 .5rem;
+  font-size: 1.02rem;
+  color: var(--body);
+}
+
+.intro .contact {
+  margin: 0;
+  font-size: .92rem;
+  color: var(--muted);
+}
+
+.portrait {
+  flex: 0 0 172px;
+  width: 172px;
+  height: 212px;
+  object-fit: cover;
+  object-position: center 42%;
+  border-radius: 8px;
+  margin: 0;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .1), 0 12px 28px -12px rgba(16, 24, 40, .35);
+}
+
+/* ---------- Body copy ---------- */
+
+.wrap p { margin: 0 0 1.15rem; }
+
+.wrap > h1 {
+  font-size: 2.1rem;
+  margin: 0 0 1.1rem;
+}
+
+.lede {
+  font-size: 1.06rem;
+  color: var(--body);
+}
+
+.wrap h2 {
+  font-size: 1.32rem;
+  margin: 2.75rem 0 .25rem;
+  padding-bottom: .55rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* School colors */
+.utah { color: #cc0000; }
+.purdue { color: #8e6f3e; }
+.michigan { color: #00274c; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: .9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: var(--body);
+  background: #f4f5f7;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: .2rem .7rem;
+}
+
+/* ---------- Publication / resource lists ---------- */
+
+.pub-list, .link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pub-list > li, .link-list > li {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--rule);
+  line-height: 1.55;
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+.pub-list > li:last-child, .link-list > li:last-child { border-bottom: 0; }
+
+/* First <i> in each entry is the paper title. */
+.pub-list > li > i:first-child {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--ink);
+  margin-bottom: .3rem;
+}
+
+/* The title is display:block, so the <br> that follows it would add a blank line. */
+.pub-list > li > i:first-child + br { display: none; }
+
+.pub-list b, .link-list b { color: var(--ink); font-weight: 600; }
+
+.pub-list a, .link-list a {
+  font-size: .88rem;
+  font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+
+/* Width is the text column exactly, so the rule lines up with the copy above it. */
+.site-footer {
+  width: calc(100% - 3rem);
+  max-width: calc(var(--measure) - 3rem);
+  margin: auto auto 0;
+  padding: 1.25rem 0 2.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--accent); }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+
+  #myNavbar.w3-bar { padding: .6rem 1rem; }
+  #myNavbar .site-name { width: 100%; margin: 0 0 .4rem; }
+  #myNavbar .w3-bar-item.w3-button { margin: 0 .1rem 0 0; padding: .3rem .55rem; }
+  /* Pull the first pill's padding back so its text lines up with the column edge. */
+  #myNavbar .w3-bar-item.w3-button:first-of-type { margin-left: -.55rem; }
+
+  .bgimg-1 { height: 26vh; }
+  .wrap { padding-top: 2.5rem; }
+  .wrap.has-hero { padding-top: 2rem; }
+
+  /* Column direction turns flex-basis into a height, so reset it. */
+  .intro { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .intro-text { flex: 0 0 auto; }
+  .intro h1 { font-size: 2rem; }
+  .portrait { flex-basis: auto; width: 160px; height: 200px; margin-top: 0; }
+}
